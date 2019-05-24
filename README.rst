@@ -36,6 +36,19 @@ Let's find some emoji, by color::
     👹  japanese_ogre
     👺  japanese_goblin
 
+Let's list all the emojis::
+
+    $ em --all
+    😀
+    😬
+    😁
+    😂
+    😃
+    😉
+    .
+    .
+    .
+
 Installation
 ------------
 
