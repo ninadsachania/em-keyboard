@@ -5,11 +5,13 @@
 Usage:
   em <name>... [--no-copy]
   em -s <name>...
+  em --all
 
 Options:
   -s            Search for emoji.
   -h --help     Show this screen.
   --no-copy     Does not copy emoji to clipboard.
+  --all         Lists all the emojis to the screen.
 
 Examples:
 
@@ -17,6 +19,7 @@ Examples:
   $ em heart
 
   $ em -s food
+  $ em --all
 
 Notes:
   - If all names provided map to emojis, the resulting emojis will be
@@ -125,6 +128,16 @@ def cli():
             # Sometimes, an emoji will have no value.
             except TypeError:
                 pass
+
+        sys.exit(0)
+
+    # Lists all the emojis to the screen.
+    if arguments['--all']:
+        for k, v in lookup.items():
+            if v['char'] is None:
+                pass
+            else:
+                print(v['char'])
 
         sys.exit(0)
 
